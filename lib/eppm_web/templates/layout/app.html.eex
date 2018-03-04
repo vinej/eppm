@@ -17,7 +17,7 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo left"><i class="material-icons">cloud</i>EPPM</a>
+      <a href="<%= page_path(@conn, :index) %>" class="brand-logo left"><i class="material-icons">cloud</i>EPPM</a>
       <ul class="right hide-on-large-and-down">
         <li><a href="search.html"><i class="material-icons">search</i></a></li>
         <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
