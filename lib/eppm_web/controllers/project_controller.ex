@@ -4,6 +4,8 @@ defmodule EppmWeb.ProjectController do
   alias Eppm.Projects
   alias Eppm.Projects.Project
 
+  plug EppmWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
+
   def index(conn, _params) do
     project = Projects.list_project()
     render(conn, "index.html", project: project)

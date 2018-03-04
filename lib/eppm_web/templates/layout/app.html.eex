@@ -17,16 +17,21 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="<%= page_path(@conn, :index) %>" class="brand-logo left"><i class="material-icons">cloud</i>EPPM</a>
+      <a href="<%= page_path(@conn, :index) %>" class="brand-logo left"><i class="material-icons">today</i>EPPM</a>
       <ul class="right hide-on-large-and-down">
         <li><a href="search.html"><i class="material-icons">search</i></a></li>
         <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <%= if @conn.assigns[:user] do %>
+          <li><a href="<%= auth_path(@conn, :signout) %>"><i class="material-icons">cloud_off</i></a></li>
+        <% else %>
+          <li><a href="<%= auth_path(@conn, :request, "github") %>"><i class="material-icons">cloud</i></a></li>
+        <% end %>
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </ul>
     </div>
   </nav>
     <div class="container">
+
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
