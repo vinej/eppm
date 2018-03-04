@@ -7,21 +7,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Eppm!</title>
+    <title>Eppm!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
 
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo left"><i class="material-icons">cloud</i>EPPM</a>
+      <ul class="right hide-on-large-and-down">
+        <li><a href="search.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
@@ -30,6 +35,8 @@
       </main>
 
     </div> <!-- /container -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
