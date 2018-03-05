@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :eppm, Eppm.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "hydne333",
+  password: "postgres",
   database: "eppm_dev",
   hostname: "localhost",
   pool_size: 10

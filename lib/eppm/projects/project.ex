@@ -8,6 +8,9 @@ defmodule Eppm.Projects.Project do
     field :desc, :string
     field :name, :string
 
+    has_many :plan, Eppm.Plans.Plan
+    belongs_to :company, Eppm.Companies.Company
+
     timestamps()
   end
 

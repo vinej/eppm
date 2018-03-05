@@ -7,8 +7,8 @@ defmodule EppmWeb.ProjectController do
   plug EppmWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
 
   def index(conn, _params) do
-    project = Projects.list_project()
-    render(conn, "index.html", project: project)
+    projects = Projects.list_project()
+    render(conn, "index.html", projects: projects)
   end
 
   def new(conn, _params) do

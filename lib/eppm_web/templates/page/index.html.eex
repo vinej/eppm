@@ -10,10 +10,10 @@
               <img src="images/triangle.jpg">
             </div>
             <div class="card-content">
-              <p>Resources (Account, User,Role,Security,Disponibility</p>
+              <p>Resources Company</p>
             </div>
             <div class="card-action">
-              <a href="<%= user_path(@conn, :index)%>">This is a link</a>
+              <a href="<%= company_path(@conn, :index)%>">Companies</a>
             </div>
           </div>
         </div>
@@ -23,10 +23,10 @@
               <img src="images/triangle.jpg">
             </div>
             <div class="card-content">
-              <p>Projects (Company, Project, Plan)</p>
+              <p>Projects</p>
             </div>
             <div class="card-action">
-              <a href="/project">This is a link</a>
+              <a href="<%= project_path(@conn, :index)%>">Projects</a>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
               <p>Activities</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="<%= plan_path(@conn, :index)%>">Plan</a>
             </div>
           </div>
         </div>

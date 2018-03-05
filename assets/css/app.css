@@ -17,7 +17,7 @@ p.alert-info:empty, p.alert-danger:empty{
 }
 
 .alert-info {
-    background-color: #36e7f4; /* Red */
+    background-color: #36e7f4; /* blue */
 }
 
 /* The close button */

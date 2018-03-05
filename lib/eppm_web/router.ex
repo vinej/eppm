@@ -20,6 +20,8 @@ defmodule EppmWeb.Router do
     get "/", PageController, :index
     resources "/project", ProjectController
     resources "/user", UserController
+    resources "/plan", PlanController
+    resources "/company", CompanyController
   end
 
   
