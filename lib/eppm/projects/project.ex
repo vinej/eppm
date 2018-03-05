@@ -17,7 +17,7 @@ defmodule Eppm.Projects.Project do
   @doc false
   def changeset(project, attrs) do
     project
-    |> cast(attrs, [:name, :code, :desc])
-    |> validate_required([:name, :code, :desc])
+    |> cast(attrs, [:name, :code, :desc, :company_id])
+    |> validate_required([:name, :code, :desc, :company_id])
   end
 end

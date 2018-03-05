@@ -3,6 +3,7 @@ defmodule EppmWeb.ProjectController do
 
   alias Eppm.Projects
   alias Eppm.Projects.Project
+  alias Eppm.Companies
 
   plug EppmWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
 
@@ -13,7 +14,8 @@ defmodule EppmWeb.ProjectController do
 
   def new(conn, _params) do
     changeset = Projects.change_project(%Project{})
-    render(conn, "new.html", changeset: changeset)
+    companies = Companies.list_companies()
+    render(conn, "new.html", changeset: changeset, companies: companies)
   end
 
   def create(conn, %{"project" => project_params}) do
@@ -35,7 +37,8 @@ defmodule EppmWeb.ProjectController do
   def edit(conn, %{"id" => id}) do
     project = Projects.get_project!(id)
     changeset = Projects.change_project(project)
-    render(conn, "edit.html", project: project, changeset: changeset)
+    companies = Companies.list_companies()
+    render(conn, "edit.html", project: project, changeset: changeset, companies: companies)
   end
 
   def update(conn, %{"id" => id, "project" => project_params}) do
