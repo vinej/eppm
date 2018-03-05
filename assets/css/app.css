@@ -1,1 +1,38 @@
 /* This file is for your main application css. */
+/* The alert message box */
+
+p.alert-info:empty, p.alert-danger:empty{
+    display: none;
+}
+
+.alert {
+    padding: 20px;
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.alert-danger {
+    background-color: #f44336; /* Red */
+}
+
+.alert-info {
+    background-color: #36e7f4; /* Red */
+}
+
+/* The close button */
+.closebtn {
+    margin-right: 5px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+} 

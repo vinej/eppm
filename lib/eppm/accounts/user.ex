@@ -2,7 +2,7 @@ defmodule Eppm.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @derive {Poison.Encoder, only: [:email]}
+  @derive {Poison.Encoder, only: [:email, :name, :provider, :id, :token]}
 
   schema "user" do
     field :email, :string

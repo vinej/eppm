@@ -5,10 +5,8 @@ defmodule EppmWeb.AuthController do
   alias Eppm.Repo
   alias Eppm.Accounts.User
 
-  def callback(conn, _params) do
-    %{assigns: %{ueberauth_auth: auth}} = conn
-
-    user_params = %{name: "jyv:", token: auth.credentials.token, email: auth.info.email, provider: "github"}
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    user_params = %{name: auth.info.name, token: auth.credentials.token, email: auth.info.email, provider: "github"}
     changeset = User.changeset(%User{}, user_params)
 
     signin(conn, changeset)
