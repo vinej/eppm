@@ -4,15 +4,17 @@ defmodule Eppm.Comments.Comment do
 
 
   schema "comment" do
-    field :title, :string
+    field :content, :string 
+    belongs_to :user, Eppm.Users..User 
+    belongs_to :post, Eppm.Posts.Post 
 
     timestamps()
   end
 
   @doc false
-  def changeset(comment, attrs) do
-    comment
-    |> cast(attrs, [:title])
-    |> validate_required([:title])
-  end
+  def changeset(struct, params \\ %{}) do 
+      struct 
+      |> cast(params, [:content]) 
+    end 
+  end  
 end
