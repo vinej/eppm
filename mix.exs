@@ -20,7 +20,7 @@ defmodule Eppm.Mixfile do
   def application do
     [
       mod: {Eppm.Application, []},
-      extra_applications: [:logger, :runtime_tools, :ueberauth, :ueberauth_github]
+      extra_applications: [:logger, :runtime_tools, :ueberauth, :ueberauth_github, :arc, :arc_ecto]
     ]
   end
 
@@ -42,9 +42,13 @@ defmodule Eppm.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ueberauth, "~> 0.3"},
-      {:ueberauth_github, "~> 0.4"}
+      {:ueberauth_github, "~> 0.4"},
+      {:arc,  "~> 0.8.0"},
+      {:arc_ecto, "~> 0.7.0"},
     ]
   end
+
+  #http://blog.brandonmathis.me/elixir/phoenix/code/rails/ruby/2016/05/09/image-upload-in-phoenix/
 
   # Aliases are shortcuts or tasks specific to the current project.
   # For example, to create, migrate and run the seeds file at once:

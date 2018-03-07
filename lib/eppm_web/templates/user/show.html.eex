@@ -12,6 +12,10 @@
     <%= @user.email %>
   </li>
 
+  <li>
+    <strong>Avatar:</strong>
+    <img src="<%= Eppm.Avatars.Avatar.url({@user.avatar, @user}) %>"/>
+  </li>
 
 </ul>
 
