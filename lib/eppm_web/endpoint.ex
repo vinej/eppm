@@ -1,15 +1,15 @@
 defmodule EppmWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :eppm
 
-  socket "/socket", EppmWeb.UserSocket
+  socket "/socket", Eppm.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/uploads", from: Path.expand('./uploads'), gzip: false,
     at: "/", from: :eppm, gzip: false,
+    at: "/uploads", from: Path.expand('./uploads'), gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the

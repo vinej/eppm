@@ -22,6 +22,8 @@ defmodule EppmWeb.Router do
     resources "/user", UserController
     resources "/plan", PlanController
     resources "/company", CompanyController
+    resources "/post", PostController
+    resources "/comment", CommentController
   end
 
   

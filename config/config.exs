@@ -35,3 +35,7 @@ config :ueberauth, Ueberauth,
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "45f8bf2c36bede1c9c08",
   client_secret: "38f6f674e183e02eec0dd22b6203aefeabdbc584"
+
+config :arc,
+  storage: Arc.Storage.Local,
+  storage_dir: "upload"

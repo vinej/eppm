@@ -13,7 +13,7 @@
               <p>Resources Company</p>
             </div>
             <div class="card-action">
-              <a href="<%= company_path(@conn, :index)%>">Companies</a>
+              <a href="<%= user_path(@conn, :index)%>">Users</a>
             </div>
           </div>
         </div>
@@ -51,10 +51,10 @@
               <img src="images/triangle.jpg">
             </div>
             <div class="card-content">
-              <p>Time (Schedule)</p>
+              <p>Companies</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="<%= company_path(@conn, :index)%>">Companies</a>
             </div>
           </div>
         </div>

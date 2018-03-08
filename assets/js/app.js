@@ -23,8 +23,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import "phoenix_html"
 import { Socket } from 'phoenix';
-import CommentsList from './CommentsList';
-import CommentBox from './CommentBox';
+import CommentsList from './components/CommentsList';
+import CommentBox from './components/CommentBox';
 
 class App extends Component {
   constructor(props) {

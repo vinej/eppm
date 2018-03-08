@@ -7,8 +7,8 @@ defmodule EppmWeb.UserController do
   plug EppmWeb.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete]
 
   def index(conn, _params) do
-    user = Accounts.list_user()
-    render(conn, "index.html", user: user)
+    users = Accounts.list_user()
+    render(conn, "index.html", users: users)
   end
 
   def new(conn, _params) do

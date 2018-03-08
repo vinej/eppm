@@ -6,7 +6,7 @@ defmodule Eppm.UserSocket do
 
   transport :websocket, Phoenix.Transports.WebSocket
 
-  @max_age 2 * 7 * 24 * 60 * 60
+  #@max_age 2 * 7 * 24 * 60 * 60
 
   def connect(%{"auth_token" => token}, socket) do
     token = Phoenix.Token.verify(socket, "user_socket", token)

@@ -3,14 +3,14 @@ defmodule Eppm.Accounts.User do
   import Ecto.Changeset
   use Arc.Ecto.Schema
 
-  @derive {Poison.Encoder, only: [:email, :name, :provider, :id, :token]}
+  @derive {Poison.Encoder, only: [:email, :name, :provider, :id, :token, :avatar]}
 
   schema "user" do
     field :email, :string
     field :name, :string
     field :token, :string
     field :provider, :string
-    field :avatar, :Eppm.Avatars.Avatar.Type
+    field :avatar, Eppm.Avatars.Avatar.Type
 
     timestamps()
   end
@@ -18,8 +18,8 @@ defmodule Eppm.Accounts.User do
   @doc false
   def changeset(user, attrs \\ :empty) do
     user
-    |> cast(attrs, [:email, :name, :provider, :token])
-    |> cast_attachments(params, [:avatar])
-    |> validate_required([:email, :name, :provider, :token])
+    |> cast(attrs, [:email, :name, :avatar])
+    |> cast_attachments(attrs, [:avatar])
+    |> validate_required([:email, :name])
   end
 end
