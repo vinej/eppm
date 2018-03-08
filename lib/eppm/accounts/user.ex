@@ -18,7 +18,7 @@ defmodule Eppm.Accounts.User do
   @doc false
   def changeset(user, attrs \\ :empty) do
     user
-    |> cast(attrs, [:email, :name, :avatar])
+    |> cast(attrs, [:email, :name, :provider, :token])
     |> cast_attachments(attrs, [:avatar])
     |> validate_required([:email, :name])
   end

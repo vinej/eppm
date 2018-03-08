@@ -23,8 +23,7 @@ defmodule Eppm.Avatars.Avatar do
     def storage_dir(_, {file, user}) do
         IO.inspect file
         IO.inspect user
-        IO.puts "+++++++"
-      "upload/avatars/#{user.id}"
+      "upload"
     end
   
     # def default_url(:thumb) do
